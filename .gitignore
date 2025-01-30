@@ -1,0 +1,16 @@
+# User-specific files
+UserSettings/
+
+# Build results
+[Bb]uild/
+[Bb]uilds/
+
+# User-specific files
+.vs/
+.idea/
+.vscode/
+
+# OSX Finder files
+.DS_Store
+
+# Windows Installer files
