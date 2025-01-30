@@ -1,6 +1,8 @@
 # User-specific files
 UserSettings/
 
+/Temp/
+
 # Build results
 [Bb]uild/
 [Bb]uilds/
