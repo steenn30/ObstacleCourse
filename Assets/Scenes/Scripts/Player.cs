@@ -29,19 +29,53 @@ public class Player : MonoBehaviour
     public float reverseMomentumMultiplier = 2.2f;
 
     private Vector3 movementVelocity = Vector3.zero;
+    
+    [Header("Death and Respawning")]
+    [Tooltip("How long after the player's death, in seconds, before they are respawned")]
+    public float respawnWaitTime = 2f;
 
+    private bool dead = false;
+
+    private Vector3 spawnPoint;
+
+    private Quaternion spawnRotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnPoint = trans.position;
+        spawnRotation = modelTrans.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.T)){
+            Die();
+        }
          Movement();
     }
+
+    public void Die(){
+        if(!dead){
+            dead = true;
+            Invoke("Respawn", respawnWaitTime);
+            movementVelocity = Vector3.zero;
+            enabled = false;
+            characterController.enabled = false;
+            modelTrans.gameObject.SetActive(false);
+        }
+    }
+
+    public void Respawn(){
+        dead = false;
+        trans.position = spawnPoint;
+        enabled = true;
+        characterController.enabled = true;
+        modelTrans.gameObject.SetActive(true);
+        modelTrans.rotation = spawnRotation;
+    }
+
     private void Movement(){
         // Up/Down movement
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
