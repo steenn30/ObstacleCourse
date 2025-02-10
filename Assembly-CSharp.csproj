@@ -64,7 +64,14 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scenes\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Scenes\Scripts\WanderRegion.cs" />
+    <Compile Include="Assets\Scenes\Scripts\Shooting.cs" />
+    <Compile Include="Assets\Scenes\Scripts\Hazard.cs" />
+    <Compile Include="Assets\Scenes\Scripts\Goal.cs" />
     <Compile Include="Assets\Scenes\Scripts\Player.cs" />
+    <Compile Include="Assets\Scenes\Scripts\Wanderer.cs" />
+    <Compile Include="Assets\Scenes\Scripts\Patroller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
